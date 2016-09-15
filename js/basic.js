@@ -21,6 +21,8 @@ function getExchangeRate() {
 
         if (data.rates.AUD != undefined) {
             convertString = data.rates.AUD + " AUD";
+        } else if (data.rates.BRL != undefined) {
+            convertString = data.rates.BRL + " BRL";
         } else if (data.rates.CAD != undefined) {
             convertString = data.rates.CAD + " CAD";
         } else if (data.rates.CHF != undefined) {
@@ -33,6 +35,8 @@ function getExchangeRate() {
             convertString = data.rates.GBP + " GBP";
         } else if (data.rates.HKD != undefined) {
             convertString = data.rates.HKD + " HKD";
+        } else if (data.rates.INR != undefined) {
+            convertString = data.rates.INR + " INR";
         } else if (data.rates.JPY != undefined) {
             convertString = data.rates.JPY + " JPY";
         } else if (data.rates.KRW != undefined) {
@@ -43,12 +47,18 @@ function getExchangeRate() {
             convertString = data.rates.NOK + " NOK";
         } else if (data.rates.NZD != undefined) {
             convertString = data.rates.NZD + " NZD";
+        } else if (data.rates.RUB != undefined) {
+            convertString = data.rates.RUB + " RUB";
         } else if (data.rates.SEK != undefined) {
             convertString = data.rates.SEK + " SEK";
         } else if (data.rates.SGD != undefined) {
             convertString = data.rates.SGD + " SGD";
+        } else if (data.rates.TRY != undefined) {
+            convertString = data.rates.TRY + " TRY";
         } else if (data.rates.USD != undefined) {
             convertString = data.rates.USD + " USD";
+        } else if (data.rates.ZAR != undefined) {
+            convertString = data.rates.ZAR + " ZAR";
         } else {
             convertString = "1 " + data.base;
         }
