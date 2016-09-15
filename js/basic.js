@@ -49,6 +49,8 @@ function getExchangeRate() {
             convertString = data.rates.SGD + " SGD";
         } else if (data.rates.USD != undefined) {
             convertString = data.rates.USD + " USD";
+        } else {
+            convertString = "1 " + data.base;
         }
 
         results.innerHTML = "1 " + data.base + " is equal to " + convertString;
@@ -61,7 +63,7 @@ function minRequest(urlString, callback) {
 }
 
 function sendRequest (urlString, callback) {
-    results.innerHTML = "getting data from " + urlString;
+    //results.innerHTML = "getting data from " + urlString;
     $.ajax({
         url: urlString,
         type: "GET",
