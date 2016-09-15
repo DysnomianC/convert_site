@@ -14,7 +14,7 @@ function getExchangeRate() {
     
     var urlString = "http://api.fixer.io/latest?base=" + option1 + "&symbols=" + option2;
 
-   /* sendRequest(urlString, function(data) {
+   sendRequest(urlString, function(data) {
         //head.innerHTML = JSON.stringify(data);
         
         var convertString = "ERROR";
@@ -27,7 +27,7 @@ function getExchangeRate() {
             convertString = data.rates.CHF + " CHF";
         } else if (data.rates.CNY != undefined) {
             convertString = data.rates.CNY + " CNY";
-        } /*else if (data.rates.EUR != undefined) {
+        } else if (data.rates.EUR != undefined) {
             convertString = data.rates.EUR + " EUR";
         } else if (data.rates.GBP != undefined) {
             convertString = data.rates.GBP + " GBP";
@@ -39,7 +39,7 @@ function getExchangeRate() {
             convertString = data.rates.KRW + " KRW";
         } else if (data.rates.MXN != undefined) {
             convertString = data.rates.MXN + " MXN";
-        } /*else if (data.rates.NOK != undefined) {
+        } else if (data.rates.NOK != undefined) {
             convertString = data.rates.NOK + " NOK";
         } else if (data.rates.NZD != undefined) {
             convertString = data.rates.NZD + " NZD";
@@ -49,7 +49,7 @@ function getExchangeRate() {
             convertString = data.rates.SGD + " SGD";
         } else if (data.rates.USD != undefined) {
             convertString = data.rates.USD + " USD";
-        }*/
+        }
 
         results.innerHTML = "1 " + data.base + " is equal to " + convertString;
     });
