@@ -12,9 +12,9 @@ function getExchangeRate() {
     var option1 = formVar.elements[0].options[sel1].value;
     var option2 = formVar.elements[1].options[sel2].value;
     
-    var urlString = "http://api.fixer.io/latest?base=" + option1 + "&symbols=" + option2;
+    //var urlString = "http://api.fixer.io/latest?base=" + option1 + "&symbols=" + option2;
 
-   sendRequest(urlString, function(data) {
+   sendRequest(option1, option2, function(data) {
         //head.innerHTML = JSON.stringify(data);
         
         var convertString = "ERROR";
@@ -53,7 +53,8 @@ function getExchangeRate() {
             convertString = "1 " + data.base;
         }
 
-        results.innerHTML = "1 " + data.base + " is equal to " + convertString;
+        results.innerHTML = "1 " + data.base + " is equal to " + convertString +
+            "<br>The data was last updated on " + data.date;
     });
 }
 
@@ -62,10 +63,10 @@ function minRequest(urlString, callback) {
     $.getJSON(urlString, callback);
 }
 
-function sendRequest (urlString, callback) {
-    //results.innerHTML = "getting data from " + urlString;
+function sendRequest (option1, option2, callback) {
+    results.innerHTML = "getting data";
     $.ajax({
-        url: urlString,
+        url: "http://api.fixer.io/latest?base=" + option1 + "&symbols=" + option2,
         type: "GET",
         processData: false
     })
@@ -74,7 +75,7 @@ function sendRequest (urlString, callback) {
         })
         .fail(function (error) {
             head.innerHTML = "Sorry, something went wrong. :( Try again later?";
-            //head.innerHTML = urlString;
+            //results.innerHTML = urlString;
             console.log(error.getAllResponseHeaders());
         });
 }
